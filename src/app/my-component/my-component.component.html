@@ -1,0 +1,40 @@
+<h1>PathLocation</h1>
+Current URL is: <code>{{location.path()}}</code>
+<br>
+<h1>{{name}}</h1>
+<br>
+<input placeholder="Value imput " [(ngModel)]="name" #username />
+<br>
+<input placeholder="input text" [(ngModel)]="newEN">
+<input placeholder="output text" [(ngModel)]="newVN">
+
+<button (click)="addWord()"  >thêm vào</button>
+
+<!-- <h1 [style.color]="name.length===0?'red' :'black'">Text Value : {{name}}</h1>
+<br>
+<code>{{username.value |json}}</code> -->
+<br>
+<select [(ngModel)]="fillterStatus">
+    <option value="Loại hồ sơ">Loại hồ sơ </option>
+    <option value="Đối tượng">Đối tượng </option>
+    <option value="Nội dung">Nội dung </option>
+    <option value="Đợt TT">Đợt TT </option>
+    <option value="Giá đề nghị TT">Giá đề nghị TT </option>
+
+</select>
+<h4 *ngFor="let item of arrWords">
+    {{ item.en}}
+</h4>
+<p *ngFor="let item of arrWords"> {{item.vn}}
+    <button (click)="removeWord(item.id)">Xóa</button>
+</p>
+<!-- <ul>
+    <li *ngFor="let item of optionss">{{item}}</li>
+</ul> -->
+<!-- <div *ngFor="let item of arrWords" class="word">
+    <h4 [ngStyle]="{color : item.memorized? 'blue': 'red'}" >
+        {{item.en}}
+    </h4>
+    <p > {{item.vn}}</p>
+    <button (click)="removeWord(item.id)">Xóa</button>
+</div> -->
